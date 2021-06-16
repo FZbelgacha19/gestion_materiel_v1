@@ -1,6 +1,8 @@
 package technicien.controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +14,7 @@ import login.dao.LoginDao;
 import magasinier.dao.MaterielDao;
 import superviseur.models.Utilisateur;
 import technicien.dao.InterventionDao;
+import technicien.models.Intervention;
 
 
 /**
@@ -38,6 +41,12 @@ public class ListeInterventionServlet extends HttpServlet {
 			Utilisateur u = (Utilisateur) request.getSession(false).getAttribute("Utilisateur");
 			request.setAttribute("listintv", i_dao.SelectIntervention(u.getId_user()));
 			request.setAttribute("m_dao", new MaterielDao());
+			/*
+			if(request.getParameter("msg") == "erreur")
+				request.setAttribute("erreur", "Materiel n'existe pas");
+			else if(request.getParameter("msg") == "success")
+				request.setAttribute("success", "Modifier avec success");
+			*/
 			request.getRequestDispatcher("tech_views/Liste_Intervention.jsp").forward(request, response);
 
 		}else {
@@ -50,9 +59,25 @@ public class ListeInterventionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String value = request.getParameter("value");
-		request.setAttribute("listintv", i_dao.SelectInterventionParMateriel(value));
+		List<Intervention> listintv = new ArrayList<Intervention>();
+		Utilisateur u = (Utilisateur) request.getSession(false).getAttribute("Utilisateur");
+		
+		if(value == "")
+			listintv = i_dao.SelectIntervention(u.getId_user());
+		else {
+			List<Intervention> listAllInt = i_dao.SelectIntervention(u.getId_user());
+			List<Intervention> listAllIntSearch = i_dao.SelectInterventionParMateriel(value);
+			for (Intervention las : listAllIntSearch) {
+				for (Intervention la : listAllInt) {
+					if(las.getId_intervention() == la.getId_intervention())
+						listintv.add(las);
+				}
+			}
+		}
+		request.setAttribute("listintv", listintv);
 		request.setAttribute("m_dao", new MaterielDao());
 		request.getRequestDispatcher("tech_views/Liste_Intervention.jsp").forward(request, response);
+		
 	}
 
 }

@@ -13,20 +13,7 @@
 	<r:override name="pageTitle">
 		<h2>Liste des filieres</h2>
 	</r:override>
-	<r:override name="message">
-		<c:choose>
-			<c:when test="${ !empty erreur }">
-				<div class="alert alert-danger" role="alert">
-					<c:out value="${ erreur }" />
-				</div>
-			</c:when>
-			<c:when test="${ !empty success }">
-				<div class="alert alert-success" role="alert">
-					<c:out value="${ success }" />
-				</div>
-			</c:when>
-		</c:choose>
-	</r:override>
+
 	<r:override name="content">
 		<div class="scrollbar">
 			<table class="table table-hover">
@@ -47,7 +34,7 @@
 									<td id="BtnEditing"><a
 										class="btn btn-outline-primary m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Modifier_Filiere?id_f=${f.getId_fil()}"><i
-											class="bi bi-pencil-squares"></i></a> <a
+											class="bi bi-pencil-square"></i></a> <a
 										class="btn btn-outline-danger m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Delete_Filiere?id_f=${f.getId_fil()}"><i
 											class="bi bi-x-square"></i></a></td>

@@ -11,17 +11,17 @@ import comptable.dao.CommandeDao;
 import login.dao.LoginDao;
 
 /**
- * Servlet implementation class SuppCommandeServlet
+ * Servlet implementation class ImprimerCommandeServlet
  */
-@WebServlet("/Supp_Commande")
-public class SuppCommandeServlet extends HttpServlet {
+@WebServlet("/Imprimer_Commande")
+public class ImprimerCommandeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	LoginDao lg_dao = new LoginDao();
-	CommandeDao c_dao = new CommandeDao();    
+	CommandeDao c_dao = new CommandeDao();  
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SuppCommandeServlet() {
+    public ImprimerCommandeServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,10 +31,10 @@ public class SuppCommandeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (lg_dao.athentifie(request.getSession(false), "Comptable")) {
-			int id = Integer.parseInt(request.getParameter("id_c"));
-			c_dao.SuppCommande(id);
-			response.sendRedirect(request.getContextPath() + "/Liste_Commande");
-
+			int num_c = Integer.parseInt(request.getParameter("num_c"));
+			request.setAttribute("listCmd", c_dao.SelectCommandeParNumCmd(num_c));
+			request.setAttribute("NumCmd", num_c);
+			request.getRequestDispatcher("Comp_views/Imprimer_Commande.jsp").forward(request, response);
 		} else
 			response.sendRedirect(request.getContextPath() + "/Se_connecter");
 	}

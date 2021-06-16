@@ -23,7 +23,7 @@
           <li><a class="dropdown-item" href="Prete_Materiel">Prête materiel</a></li>
           <li><a class="dropdown-item" href="Materiels_preter">Liste materiels Prêter</a></li>
           </ul></li>
-          <li><a class="nav-link scrollto" href="Valide_Commande">Valide Commande</a></li>
+          <li><a class="nav-link scrollto" href="Valide_Demande">Valide Commande</a></li>
           <li class="nav-item"><a class="nav-link scrollto fw-bolder" href="#">${Utilisateur.getLogin()}</a></li>
           <li class="nav-item"><a class="nav-link scrollto" href="Deconnecter">Deconnecter</a>
   </r:override>

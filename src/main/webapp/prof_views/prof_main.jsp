@@ -45,7 +45,7 @@
 	   <r:block name="pageTitle"> 
 	   </r:block>
 	  </div>
-	  <r:block name="message"></r:block>
+
 	</section>
 	<section class=" d-flex align-items-center">
 		<div class="container">

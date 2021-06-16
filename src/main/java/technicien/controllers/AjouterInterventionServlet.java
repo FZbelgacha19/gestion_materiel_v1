@@ -51,27 +51,29 @@ public class AjouterInterventionServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
+		
 			int Id_intervention = 1+i_dao.maxid();
 			Utilisateur u = (Utilisateur) request.getSession(false).getAttribute("Utilisateur");
 			String Inventaire = u.getId_user();
 			Materiel m = m_dao.getMateriels(request.getParameter("Num_Serie"));
-			int Id_mat = m.getId_mat();
-			String Traitement = request.getParameter("Traitement");
-			Date Date_intervention = new Date();
+			if( m != null) {
+				int Id_mat = m.getId_mat();
+				String Traitement = request.getParameter("Traitement");
+				Date Date_intervention = new Date();
+				
+				Intervention i = new Intervention();
+				i.setId_intervention(Id_intervention);
+				i.setInventaire(Inventaire);
+				i.setId_mat(Id_mat);
+				i.setTraitement(Traitement);
+				i.setDate_intervention(new java.sql.Date(Date_intervention.getTime()));
+				request.setAttribute("success", "Ajouté avec success");
+				i_dao.AjoutIntervention(i);
+			}else
+				request.setAttribute("erreur", "Materiel n'existe pas");
 			
-			Intervention i = new Intervention();
-			i.setId_intervention(Id_intervention);
-			i.setInventaire(Inventaire);
-			i.setId_mat(Id_mat);
-			i.setTraitement(Traitement);
-			i.setDate_intervention(new java.sql.Date(Date_intervention.getTime()));
-			
-			i_dao.AjoutIntervention(i);
-			response.sendRedirect(request.getContextPath()+"/Ajouter_Intervention");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+			doGet(request, response);
+		
 	}
 
 }

@@ -91,9 +91,9 @@ public class ModifierMaterielServlet extends HttpServlet {
 			mat.setMark(Mark);
 			m_dao.ModifMateriel(mat);
 			
-			request.setAttribute("success", "materiel ajouter avec success");
+			
 		} catch (ParseException e) {
-			request.setAttribute("erreur", "erreur lors d'ajouter materiel");
+			
 			e.printStackTrace();
 		}
 		response.sendRedirect(request.getContextPath()+"/List_Materiel");

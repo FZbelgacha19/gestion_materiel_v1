@@ -45,7 +45,7 @@ public class ListDemande extends HttpServlet {
 			request.setAttribute("s", s_dao);
 			request.setAttribute("f", f_fao);
 			Utilisateur u = (Utilisateur) request.getSession(false).getAttribute("Utilisateur");
-			request.setAttribute("ListDmd", d_dao.SelectDemande(u.getId_user()));
+			request.setAttribute("ListDmd", d_dao.SelectDemandeByProf(u.getId_user()));
 			request.getRequestDispatcher("prof_views/List_Demande.jsp").forward(request, response);
 		} else {
 			response.sendRedirect(request.getContextPath() + "/Se_connecter");

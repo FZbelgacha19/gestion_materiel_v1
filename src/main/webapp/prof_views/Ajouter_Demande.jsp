@@ -15,20 +15,6 @@
 	<r:override name="pageTitle">
 		<h2>Ajouter nouveau Demande</h2>
 	</r:override>
-	<r:override name="message">
-		<c:choose>
-			<c:when test="${ !empty erreur }">
-				<div class="alert alert-danger" role="alert">
-					<c:out value="${ erreur }" />
-				</div>
-			</c:when>
-			<c:when test="${ !empty success }">
-				<div class="alert alert-success" role="alert">
-					<c:out value="${ success }" />
-				</div>
-			</c:when>
-		</c:choose>
-	</r:override>
 	<r:override name="content">
 		<form class="mx-5"
 			action="<%= request.getContextPath() %>/Ajouter_Demande"

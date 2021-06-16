@@ -15,14 +15,14 @@
 	</r:override>
 	<r:override name="message">
 		<c:choose>
-			<c:when test="${ !empty erreur }">
+			<c:when test="${param.msg == 0 }">
 				<div class="alert alert-danger" role="alert">
-					<c:out value="${ erreur }" />
+					Materiel n'existe pas
 				</div>
 			</c:when>
-			<c:when test="${ !empty success }">
+			<c:when test="${param.msg == 1 }">
 				<div class="alert alert-success" role="alert">
-					<c:out value="${ success }" />
+					Modification fait avec success
 				</div>
 			</c:when>
 		</c:choose>

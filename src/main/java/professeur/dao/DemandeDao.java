@@ -143,13 +143,13 @@ public class DemandeDao {
 	}
 	
 	
-	public Demande SelectDemande(int id_f) {
+	public Demande SelectDemande(int id_d) {
 		String query = "SELECT `Id_dmd`,`Id_Prof`,`Date_dmd`,`Qte`,`Salle`, `valide`,`type`,`filiere` FROM `demande` WHERE `Id_dmd`=?";
 		Demande D = new Demande();
 		Connection co = connection.getConnection();
 		try {
 			PreparedStatement ps = co.prepareStatement(query);
-			ps.setObject(1, id_f);
+			ps.setObject(1, id_d);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				

@@ -13,7 +13,7 @@ import DB.connection.connection;
 public class CommandeDao {
 	public void AjoutCommande(Commande C) {
 		String query = "INSERT INTO `commande`(`Id_cmd`,`Date_cmd`,`Etat_cmd`,`Valider`,`typeMat`,`Qte`,`Description`,`Num_cmd`)"
-				+ " VALUES (?,?,?,?,?,?,?)";
+				+ " VALUES (?,?,?,?,?,?,?,?)";
 		Connection co = connection.getConnection();
 		try {
 			PreparedStatement ps = co.prepareStatement(query);
@@ -92,6 +92,44 @@ public class CommandeDao {
 		}
 		return list_C;
 	}
+	
+	
+	public List<Integer> getCommandes() {
+		String query = "SELECT DISTINCT(Num_cmd) FROM commande";
+
+		List<Integer> list_C = new ArrayList<Integer>();
+		Connection co = connection.getConnection();
+		try {
+			PreparedStatement ps = co.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				list_C.add(rs.getInt(1));
+			}
+			ps.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list_C;
+	}
+	public List<Integer> getCommandes(int num_c) {
+		String query = "SELECT DISTINCT(Num_cmd) FROM commande WHERE `Num_cmd`=?";
+
+		List<Integer> list_C = new ArrayList<Integer>();
+		Connection co = connection.getConnection();
+		try {
+			PreparedStatement ps = co.prepareStatement(query);
+			ps.setObject(1, num_c);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				list_C.add(rs.getInt(1));
+			}
+			ps.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list_C;
+	}
+	
 	public Commande SelectCommande(int id_c) {
 		String query = "SELECT `Id_cmd`,`Date_cmd`,`Etat_cmd`,`Valider`,`typeMat`,`Qte`,`Description`,`Num_cmd` "
 				+ "FROM `commande` WHERE `Id_cmd`=?";
@@ -118,6 +156,36 @@ public class CommandeDao {
 		}
 		return C;
 	}
+	
+	public List<Commande> SelectCommandeParNumCmd(int num_c) {
+		String query = "SELECT `Id_cmd`,`Date_cmd`,`Etat_cmd`,`Valider`,`typeMat`,`Qte`,`Description`, `Num_cmd` "
+				+ "FROM `commande` WHERE `Num_cmd`=?";
+
+		List<Commande> list_C = new ArrayList<Commande>();
+		Connection co = connection.getConnection();
+		try {
+			PreparedStatement ps = co.prepareStatement(query);
+			ps.setObject(1, num_c);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Commande C = new Commande();
+				C.setId_cmd((int) rs.getObject(1));
+				C.setDate_cmd((Date) rs.getObject(2));
+				C.setEtat_cmd((String) rs.getObject(3));		
+				C.setValider((String) rs.getObject(4));
+				C.setTypeMat((String) rs.getObject(5));
+				C.setQte((int) rs.getObject(6));
+				C.setDescription((String) rs.getObject(7));
+				C.setNum_cmd((int) rs.getObject(8));
+				list_C.add(C);
+			}
+			ps.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list_C;
+	}
+	
 	
 	public int maxid() {
 		Connection co = connection.getConnection();
@@ -148,5 +216,33 @@ public class CommandeDao {
 			e.printStackTrace();
 		}
 		return i;
+	}
+
+	public void valideCommande(int num_cmd) {
+		String query = "UPDATE `commande` SET `Valider`='valide' WHERE `Num_cmd`=?";
+		Connection co = connection.getConnection();
+		try {
+			PreparedStatement ps = co.prepareStatement(query);
+			ps.setObject(1, num_cmd);
+			ps.execute();
+			ps.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void payeCommande(int num_cmd) {
+		String query = "UPDATE `commande` SET `Etat_cmd`='paye' WHERE `Num_cmd`=?";
+		Connection co = connection.getConnection();
+		try {
+			PreparedStatement ps = co.prepareStatement(query);
+			ps.setObject(1, num_cmd);
+			ps.execute();
+			ps.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 }

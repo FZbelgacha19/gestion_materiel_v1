@@ -1,7 +1,6 @@
 package comptable.controllers;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -61,12 +60,14 @@ public class AjouterCommandeServlet extends HttpServlet {
 			c.setId_cmd(id);
 			c.setNum_cmd(Num_cmd);
 			c.setDate_cmd(new java.sql.Date(Date_cmd.getTime()));
+			c.setTypeMat(typeMat[i]);
 			c.setEtat_cmd("no_paye");
 			c.setDescription(Description[i]);
 			c.setQte(Integer.parseInt(Qte[i]));
 			c.setValider("no_valide");
 			c_dao.AjoutCommande(c);
 		}
+		response.sendRedirect(request.getContextPath()+"/Imprimer_Commande?num_c="+Num_cmd);
 
 	}
 

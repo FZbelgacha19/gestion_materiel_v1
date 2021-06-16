@@ -13,30 +13,22 @@
 	<r:override name="pageTitle">
 		<h2>Listes des demandes</h2>
 	</r:override>
-	<r:override name="message">
-		<c:choose>
-			<c:when test="${ !empty erreur }">
-				<div class="alert alert-danger" role="alert">
-					<c:out value="${ erreur }" />
-				</div>
-			</c:when>
-			<c:when test="${ !empty success }">
-				<div class="alert alert-success" role="alert">
-					<c:out value="${ success }" />
-				</div>
-			</c:when>
-		</c:choose>
-	</r:override>
+
 	<r:override name="content">
 		<div class="d-flex justify-content-end m-5" id="search">
 			<form action="<%=request.getContextPath()%>/List_Demande"
 				method="post" class="d-flex justify-content-around">
 				<select  class="form-select" name="value">
-					<option value="" disabled="disabled"></option>
+					<option value="" disabled="disabled" selected="selected"></option>
 					<option value="no_valide">Demande no valide</option>
 					<option value="valide">Demande valide</option>
 				</select>
-				<button class="btn btn-outline-success" type="submit">Search</button>
+				<div class="btn-group ms-2">
+				<button class="btn btn-outline-success btn-sm" type="submit"><i class="bi bi-search"></i></button>
+				<button class="btn btn-outline-danger btn-sm" type="button" onclick="location.href='List_Demande'">
+				<b>X</b>
+				</button>
+				</div>
 			</form>
 		</div>
 		<div class="scrollbar">

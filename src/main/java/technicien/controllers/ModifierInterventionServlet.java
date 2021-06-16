@@ -54,7 +54,7 @@ public class ModifierInterventionServlet extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id_i"));
 		Intervention i = i_dao.getIntervention(id);
 		Materiel m = m_dao.getMateriels(request.getParameter("Num_Serie"));
-		
+		if( m != null) {
 		
 		Date Date_intervention = new Date();
 		String Traitement = request.getParameter("Traitement");
@@ -65,7 +65,11 @@ public class ModifierInterventionServlet extends HttpServlet {
 		i.setId_mat(Id_mat);
 		i.setTraitement(Traitement);
 		i_dao.ModifeIntervention(i);
-		response.sendRedirect(request.getContextPath()+"/Liste_Intervention");
+		response.sendRedirect(request.getContextPath()+"/Liste_Intervention?msg=1");
+		}else
+			response.sendRedirect(request.getContextPath()+"/Liste_Intervention?msg=0");
+		
+
 	}
 
 }

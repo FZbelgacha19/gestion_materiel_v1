@@ -24,11 +24,12 @@
 
   <div class="container">
  	<section class="d-flex align-items-center mt-5 pb-0">
-	 	<div class="container">
+	 	<div class="container d-flex justify-content-between">
 	   <r:block name="pageTitle"> 
 	   </r:block>
+	   <r:block name="message"></r:block>
 	  </div>
-	  <r:block name="message"></r:block>
+	  
 	</section>
 	<section class=" d-flex align-items-center">
 		<div class="container">

@@ -11,17 +11,17 @@ import comptable.dao.CommandeDao;
 import login.dao.LoginDao;
 
 /**
- * Servlet implementation class SuppCommandeServlet
+ * Servlet implementation class PayeCommandeServlet
  */
-@WebServlet("/Supp_Commande")
-public class SuppCommandeServlet extends HttpServlet {
+@WebServlet("/Paye_Commande")
+public class PayeCommandeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	LoginDao lg_dao = new LoginDao();
 	CommandeDao c_dao = new CommandeDao();    
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SuppCommandeServlet() {
+    public PayeCommandeServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,8 +31,8 @@ public class SuppCommandeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (lg_dao.athentifie(request.getSession(false), "Comptable")) {
-			int id = Integer.parseInt(request.getParameter("id_c"));
-			c_dao.SuppCommande(id);
+			int num_cmd = Integer.parseInt(request.getParameter("num_cmd"));
+			c_dao.payeCommande(num_cmd);
 			response.sendRedirect(request.getContextPath() + "/Liste_Commande");
 
 		} else

@@ -20,20 +20,6 @@
 	<r:override name="pageTitle">
 		<h2>List materiel</h2>
 	</r:override>
-	<r:override name="message">
-		<c:choose>
-			<c:when test="${ !empty erreur }">
-				<div class="alert alert-danger" role="alert">
-					<c:out value="${ erreur }" />
-				</div>
-			</c:when>
-			<c:when test="${ !empty success }">
-				<div class="alert alert-success" role="alert">
-					<c:out value="${ success }" />
-				</div>
-			</c:when>
-		</c:choose>
-	</r:override>
 	<r:override name="content">
 		<div class="d-flex justify-content-end m-5"  id="search">
 			<form action="<%=request.getContextPath()%>/List_Materiel"
