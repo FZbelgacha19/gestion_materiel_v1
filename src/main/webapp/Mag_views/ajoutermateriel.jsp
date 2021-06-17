@@ -1,12 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="r" uri="http://www.rapid-framework.org.cn/rapid"%>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <r:override name="title">Ajouter materiel</r:override>
 </head>
 <body>
@@ -62,8 +62,8 @@
 				<label for="Etat_mat" class="form-label col-2">Etate materiel</label> <select
 					id="Etat_mat" name="Etat_mat" class="form-control col"
 					required="required">
-					<option value="neuf">matériel neuf</option>
-					<option value="remise_neuf">matériel remise à neuf</option>
+					<option value="neuf">matÃ©riel neuf</option>
+					<option value="remise_neuf">matÃ©riel remise Ã  neuf</option>
 				</select>
 			</div>
 

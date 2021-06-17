@@ -3,12 +3,12 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <jsp:useBean id="aujourdhui" class="java.util.Date" />
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <r:override name="title">Imprimer Commande</r:override>
 <style type="text/css">
 @media print {
@@ -20,7 +20,7 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Imprimer reçu de commande</h2>
+		<h2>Imprimer reÃ§u de commande</h2>
 	</r:override>
 
 	<r:override name="content">
@@ -30,24 +30,24 @@
 			</div>
 			<div class="d-flex justify-content-center mt-5">
 				<fmt:formatDate var="annee" value="${aujourdhui}" pattern="yyyy" />
-				<h2>bon de commande N° : ${NumCmd}/${annee}</h2>
+				<h2>bon de commande NÂ° : ${NumCmd}/${annee}</h2>
 			</div>
 			<div class="d-flex justify-content-end mt-5">
 				<fmt:formatDate var="date" value="${aujourdhui}"
 					pattern="dd/MM/yyyy" />
 				<table>
 					<tr>
-						<td><b>Kénitra le </b> : ${date}</td>
+						<td><b>KÃ©nitra le </b> : ${date}</td>
 					</tr>
 					<tr>
 						<td><b>Client : </b>${Utilisateur.getNom_user()}
 							${Utilisateur.getPrenom_user()}</td>
 					</tr>
 					<tr>
-						<td><b>N° téléphone : </b>${Utilisateur.getTele()}</td>
+						<td><b>NÂ° tÃ©lÃ©phone : </b>${Utilisateur.getTele()}</td>
 					</tr>
 					<tr>
-						<td><b>Etablessement : </b>Lycée technique ibn sina - Kénitra</td>
+						<td><b>Etablessement : </b>LycÃ©e technique ibn sina - KÃ©nitra</td>
 					</tr>
 				</table>
 
@@ -57,7 +57,7 @@
 					<thead>
 						<tr>
 							<th scope="col">Type de materiel</th>
-							<th scope="col">Quantité commandé</th>
+							<th scope="col">QuantitÃ© commandÃ©</th>
 							<th scope="col">Description</th>
 							<th scope="col">Etat de commande</th>
 						</tr>
@@ -99,7 +99,7 @@
 	  newWin.document.open();
 
 	  newWin.document.write("<html><head>\r\n"
-				+ "<meta charset=\"ISO-8859-1\">\r\n"
+				+ "<meta charset=\"UTF-8\">\r\n"
 				+ "	  <!-- Vendor CSS Files -->\r\n"
 				+ "  <link href=\"assets/vendor/aos/aos.css\" rel=\"stylesheet\">\r\n"
 				+ "  <link href=\"assets/vendor/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">\r\n"

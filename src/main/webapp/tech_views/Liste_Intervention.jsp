@@ -1,12 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="r" uri="http://www.rapid-framework.org.cn/rapid"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <r:override name="title">List Salles</r:override>
 </head>
 <body>
@@ -32,7 +32,7 @@
 			<form action="<%=request.getContextPath()%>/Liste_Intervention"
 				method="post" class="d-flex justify-content-around">
 				<input class="form-control me-2" type="search"
-					placeholder="Tapez N° serie de materiel" name="value">
+					placeholder="Tapez NÂ° serie de materiel" name="value">
 				<button class="btn btn-outline-success" type="submit">Search</button>
 			</form>
 		</div>
@@ -40,7 +40,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th scope="col">N° materiel</th>
+						<th scope="col">NÂ° materiel</th>
 						<th scope="col">Traitement</th>
 						<th scope="col">Date intervention</th>
 						<th scope="col"></th>

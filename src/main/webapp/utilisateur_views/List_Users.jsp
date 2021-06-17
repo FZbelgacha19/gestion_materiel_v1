@@ -1,12 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="r" uri="http://www.rapid-framework.org.cn/rapid"%>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
 
@@ -14,7 +14,10 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Listes des utilisateurs de systemes</h2>
+	<div>
+		<h2 class="font-bold col-Russian-violet">Listes des utilisateurs de systemes</h2>
+		<hr>
+		</div>
 	</r:override>
 	<r:override name="message">
 		<c:if test="${ !empty success }">
@@ -24,16 +27,16 @@
 		</c:if>
 	</r:override>
 	<r:override name="content">
-		<div class="d-flex justify-content-end m-5" id="search">
+		<div class="container d-flex justify-content-end mx-5 mt-2 mb-3 pe-5" id="search">
 			<form action="<%=request.getContextPath()%>/Liste_Utilisateurs"
 				method="post" class="d-flex justify-content-around">
-				<input class="form-control me-2" type="search" placeholder="Search"
+				<input class="form-control round-pill-start" type="search" placeholder="Search"
 					name="value">
-				<button class="btn btn-outline-success" type="submit">Search</button>
+				<button class="btn btn-outline-Dark-Cornflower-bleu round-pill-end" type="submit">Search</button>
 			</form>
 		</div>
 		<div class="scrollbar" id="listUtilisateurs">
-			<table class="table table-striped table-hover">
+			<table class="table table-hover">
 				<thead>
 					<tr>
 						<th scope="col">Nom complete</th>
@@ -58,10 +61,10 @@
 							<td>${u.getUpdated_at()}</td>
 							<td class="d-flex justify-content-around BtnEditing" id="BtnEditing"><a
 								href="Modifier_Les_informations?id_user=${u.getId_user()}"
-								class="btn btn-outline-primary m-2 btn-sm"><i
+								class="btn btn-outline-Dark-Cornflower-bleu m-2 btn-sm"><i
 									class="bi bi-person-lines-fill"></i></a> <a
 								href="Supprime_utilisateur?id_user=${u.getId_user()}"
-								class="btn btn-outline-danger m-2 btn-sm"><i
+								class="btn btn-outline-CandyPink m-2 btn-sm"><i
 									class="bi bi-person-x-fill"></i></a></td>
 						</tr>
 					</c:forEach>
@@ -87,7 +90,7 @@
 	  newWin.document.open();
 
 	  newWin.document.write("<html><head>\r\n"
-				+ "<meta charset=\"ISO-8859-1\">\r\n"
+				+ "<meta charset=\"UTF-8\">\r\n"
 				+ "	  <!-- Vendor CSS Files -->\r\n"
 				+ "  <link href=\"assets/vendor/aos/aos.css\" rel=\"stylesheet\">\r\n"
 				+ "  <link href=\"assets/vendor/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">\r\n"

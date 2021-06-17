@@ -1,12 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="r" uri="http://www.rapid-framework.org.cn/rapid"%>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <r:override name="title">Liste des commande</r:override>
 </head>
 <body>
@@ -18,7 +18,7 @@
 	<div class="d-flex justify-content-end m-5"  id="search">
 			<form action="<%=request.getContextPath()%>/Liste_Commande"
 				method="post" class="d-flex justify-content-around" >
-				<input class="form-control me-2" type="search" placeholder="N° commande"
+				<input class="form-control me-2" type="search" placeholder="NÂ° commande"
 					name="value">
 				<button class="btn btn-outline-success" type="submit">Search</button>
 			</form>
@@ -33,7 +33,7 @@
 							<button class="accordion-button collapsed" type="button"
 								data-bs-toggle="collapse"
 								data-bs-target="#flush-collapse${numC}" aria-expanded="false"
-								aria-controls="flush-collapse${numC}">Commande N° :
+								aria-controls="flush-collapse${numC}">Commande NÂ° :
 								${numC}</button>
 						</h2>
 						
@@ -53,7 +53,7 @@
 								class="btn btn-outline-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Valider"
 								href="<%=request.getContextPath()%>/Valide_Commande?num_cmd=${numC}"><i
 								class="bi bi-check2-square"></i></a> <a
-								class="btn btn-outline-dark btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Payé"
+								class="btn btn-outline-dark btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="PayÃ©"
 								href="<%=request.getContextPath()%>/Paye_Commande?num_cmd=${numC}"><i
 								class="bi bi-cash"></i></a>
 						</div>
@@ -63,7 +63,7 @@
 										<tr>
 											<th scope="col">Date de commande</th>
 											<th scope="col">Type de materiel</th>
-											<th scope="col">Quantité commandé</th>
+											<th scope="col">QuantitÃ© commandÃ©</th>
 											<th scope="col">Description</th>
 											<th scope="col">Etat de commande</th>
 											<th scope="col"></th>

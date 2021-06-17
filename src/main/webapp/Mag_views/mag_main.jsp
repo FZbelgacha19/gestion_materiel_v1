@@ -1,13 +1,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="r" uri="http://www.rapid-framework.org.cn/rapid" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 
 </head>
 <body>
@@ -20,8 +20,8 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <li><a class="dropdown-item" href="Ajouter_Materiel">Ajouter Materiel</a></li>
           <li><a class="dropdown-item" href="List_Materiel">Liste des materiels</a></li>
-          <li><a class="dropdown-item" href="Prete_Materiel">Prête materiel</a></li>
-          <li><a class="dropdown-item" href="Materiels_preter">Liste materiels Prêter</a></li>
+          <li><a class="dropdown-item" href="Prete_Materiel">PrÃªte materiel</a></li>
+          <li><a class="dropdown-item" href="Materiels_preter">Liste materiels PrÃªter</a></li>
           </ul></li>
           <li><a class="nav-link scrollto" href="Valide_Demande">Valide Commande</a></li>
           <li class="nav-item"><a class="nav-link scrollto fw-bolder" href="#">${Utilisateur.getLogin()}</a></li>

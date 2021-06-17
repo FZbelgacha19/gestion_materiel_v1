@@ -1,12 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="r" uri="http://www.rapid-framework.org.cn/rapid"%>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <r:override name="title">List materiel</r:override>
 <style type="text/css">
 @media print {
@@ -38,7 +38,7 @@
 						<th scope="col">Designation</th>
 						<th scope="col">Etat_mat</th>
 						<th scope="col">Marque</th>
-						<th scope="col">Prêter</th>
+						<th scope="col">PrÃªter</th>
 						<th scope="col"></th>
 					</tr>
 				</thead>
@@ -63,7 +63,7 @@
 										class="bi bi-x-square"></i></a>
 								</c:if>
 								<c:if test="${es_dao.MaterielExist(m.getId_mat()) == 0}">
-								<p>Déja prêté</p>
+								<p>DÃ©ja prÃªtÃ©</p>
 								</c:if>	
 								</td>
 
