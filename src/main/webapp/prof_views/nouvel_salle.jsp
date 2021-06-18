@@ -11,27 +11,29 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Ajouter nouveau Salle</h2>
+		Ajouter nouveau Salle
 	</r:override>
 
 	<r:override name="content">
+	<div class="container px-200 mt-2">
 		<form class="mx-5"
 			action="<%=request.getContextPath()%>/nouvel_salle" method="post">
 
 			<div class="mb-3 row">
-				<label for="Num_salle" class="form-label col-2">Numero de
+				<label for="Num_salle" class="form-label col-3">Numero de
 					salle</label> <input id="Num_salle" name="Num_salle" type="number"
 					class="form-control col" required="required">
 			</div>
 			<div class="mb-3 row">
-				<label for="Bloc" class="form-label col-2">Bloc</label> <input
+				<label for="Bloc" class="form-label col-3">Bloc</label> <input
 					id="Bloc" name="Bloc" type="text" class="form-control col"
 					required="required">
 			</div>
 			<div class="mb-3 d-flex justify-content-end">
-				<button name="submit" type="submit" class="btn btn-outline-primary">ajouter</button>
+				<button name="submit" type="submit" class="btn btn-outline-Dark-Cornflower-bleu rounded-pill m-1">ajouter</button>
 			</div>
 		</form>
+		</div>
 	</r:override>
 
 

@@ -11,7 +11,10 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Liste des Salles</h2>
+		<div>
+		<h2 class="font-bold col-Russian-violet">Liste des Salles</h2>
+		<hr>
+		</div>
 	</r:override>
 	<r:override name="message">
 		<c:choose>
@@ -28,12 +31,12 @@
 		</c:choose>
 	</r:override>
 	<r:override name="content">
-		<div class="d-flex justify-content-end m-5" id="search">
+		<div class="container d-flex justify-content-end mx-5 mt-2 mb-3 pe-5" id="search">
 			<form action="<%=request.getContextPath()%>/Liste_Intervention"
 				method="post" class="d-flex justify-content-around">
-				<input class="form-control me-2" type="search"
-					placeholder="Tapez N° serie de materiel" name="value">
-				<button class="btn btn-outline-success" type="submit">Search</button>
+				<input class="form-control round-pill-start" type="search"
+					placeholder="N° serie de materiel" name="value">
+				<button class="btn btn-outline-Dark-Cornflower-bleu round-pill-end" type="submit">Search</button>
 			</form>
 		</div>
 		<div class="scrollbar">
@@ -56,13 +59,13 @@
 								<td>${i.getDate_intervention()}</td>
 								<c:if test="${fn:contains(i.getValide(),'no_valide') }">
 									<td id="BtnEditing"><a
-										class="btn btn-outline-primary m-2 btn-sm"
+										class="btn btn-outline-Dark-Cornflower-bleu m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Modifier_Intervention?id_i=${i.getId_intervention()}"><i
 											class="bi bi-pencil-square"></i></a> <a
-										class="btn btn-outline-primary m-2 btn-sm"
+										class="btn btn-outline-CandyPink m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Valide_Intervention?id_i=${i.getId_intervention()}"><i
 											class="bi bi-check2-square"></i></a> <a
-										class="btn btn-outline-danger m-2 btn-sm"
+										class="btn btn-outline-PastelPink m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Delete_Intervention?id_i=${i.getId_intervention()}"><i
 											class="bi bi-x-square"></i></a></td>
 

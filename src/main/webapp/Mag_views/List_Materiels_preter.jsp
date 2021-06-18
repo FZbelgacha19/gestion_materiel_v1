@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<r:override name="title">Prete materiel</r:override>
+<r:override name="title">Liste materiel preté</r:override>
 <style type="text/css">
 @media print {
 	#BtnImprimer, #BtnEditing {
@@ -18,15 +18,15 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Prete materiel</h2>
+		Liste materiel preté
 	</r:override>
 	<r:override name="content">
-		<div class="d-flex justify-content-end m-5" id="search">
+		<div class="container d-flex justify-content-end mx-5 mt-2 mb-3 pe-5" id="search">
 			<form action="<%=request.getContextPath()%>/Materiels_preter"
 				method="post" class="d-flex justify-content-around">
-				<input class="form-control me-2" type="search" placeholder="Search"
+				<input class="form-control round-pill-start" type="search" placeholder="Search"
 					name="value">
-				<button class="btn btn-outline-success" type="submit">Search</button>
+				<button class="btn btn-outline-Dark-Cornflower-bleu round-pill-end" type="submit">Search</button>
 			</form>
 		</div>
 		<div class="scrollbar">
@@ -53,7 +53,7 @@
 								<td>${m.getMark()}</td>
 								<td>${rm_dao.NbPrete(m.getId_mat())} fois</td>
 								<td id="BtnEditing"><a
-									class="btn btn-outline-primary m-2 btn-sm"
+									class="btn btn-outline-Dark-Cornflower-bleu m-2 btn-sm"
 									href="<%=request.getContextPath()%>/Retour_Materiel?id_m=${m.getId_mat()}">
 									<i class="bi bi-arrow-left-square"></i></a></td>
 

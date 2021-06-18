@@ -11,27 +11,29 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Ajouter nouveau filiere</h2>
+	Ajouter nouveau filiere
 	</r:override>
 
 	<r:override name="content">
+		<div class="container px-200 mt-2">
 		<form class="mx-5"
 			action="<%=request.getContextPath()%>/nouvel_filier" method="post">
 
 			<div class="mb-3 row">
-				<label for="Nbr_etudiant" class="form-label col-2">Nombere des
+				<label for="Nbr_etudiant" class="form-label col-4">Nombere des
 					etudiants</label> <input id="Nbr_etudiant" name="Nbr_etudiant" type="number"
 					class="form-control col" required="required">
 			</div>
 			<div class="mb-3 row">
-				<label for="Nom_fil" class="form-label col-2">Nom de filiere</label> <input
+				<label for="Nom_fil" class="form-label col-4">Nom de filiere</label> <input
 					id="Nom_fil" name="Nom_fil" type="text" class="form-control col"
 					required="required">
 			</div>
 			<div class="mb-3 d-flex justify-content-end">
-				<button name="submit" type="submit" class="btn btn-outline-primary">ajouter</button>
+				<button name="submit" type="submit" class="btn btn-outline-Dark-Cornflower-bleu rounded-pill m-1">ajouter</button>
 			</div>
 		</form>
+		</div>
 	</r:override>
 
 

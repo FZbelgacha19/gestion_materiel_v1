@@ -15,10 +15,13 @@
 			href="Ajouter_utilisateur">Ajouter utilisateur</a></li>
 		<li class="nav-item"><a class="nav-link scrollto"
 			href="Liste_Utilisateurs">Liste des utilisateurs</a></li>
-		<li class="nav-item"><a class="nav-link scrollto fw-bolder"
-			href="#"> ${Utilisateur.getLogin()}</a></li>
-		<li class="nav-item"><a class="nav-link scrollto"
-			href="Deconnecter">Deconnecter</a></li>
+		<li class="nav-item"><div class="d-flex justify-content-between mx-3">
+		<img alt="" src="login_views/img/${Utilisateur.getPhoto()}" width="50" height="50" class="rounded-circle">
+		<a class="scrollto fw-bolder login-Name p-1 m-0"
+			href="#"> ${Utilisateur.getLogin()}</a>
+			</div>
+			</li>
+		<li class="nav-item"><a class="nav-link scrollto deconnecter" href="Deconnecter">Deconnecter</a></li>
 	</r:override>
 
 	<div class="container">

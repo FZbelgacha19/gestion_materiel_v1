@@ -60,7 +60,10 @@ public class ModifierInterventionServlet extends HttpServlet {
 		String Traitement = request.getParameter("Traitement");
 		int Id_mat = m.getId_mat();
 		
-		
+		if(Traitement.equals("...") == false) {
+			m.setEtat_mat("remise_neuf");
+			m_dao.ModifMateriel(m);
+		}
 		i.setDate_intervention(new java.sql.Date(Date_intervention.getTime()));
 		i.setId_mat(Id_mat);
 		i.setTraitement(Traitement);

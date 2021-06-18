@@ -20,7 +20,7 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Imprimer reçu de commande</h2>
+		Imprimer reçu de commande
 	</r:override>
 
 	<r:override name="content">

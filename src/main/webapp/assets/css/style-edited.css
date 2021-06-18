@@ -61,6 +61,13 @@ a.logoApp {
 	font-size: 16px !important;
 	color: #4B0082 !important;
 }
+.nav-link:hover{
+	border-bottom: 2px !important;
+	border-bottom-style: solid !important;
+	border-right-width: 10px !important;
+	padding-right: 15px !important;
+	padding-left: 15px !important;
+}
 
 
 .mt-10{
@@ -110,6 +117,14 @@ a.logoApp {
 	background: white;
 }
 
+
+.login-Name{
+	color:#240046 !important;
+	font-size: 16px !important;
+	font-family: ABeeZee !important;
+}
+
+
 .img-300-px{
 	height: 300px !important;
 }
@@ -122,7 +137,7 @@ a.logoApp {
 .btn-outline-mauve:hover {
 	color: white !important;
 	border-color: #1F0036 !important;
-	background: #1F0036;
+	background: #1F0036 !important;
 	font-family: ABeeZee !important;	
 }
 
@@ -134,7 +149,7 @@ a.logoApp {
 .btn-outline-CandyPink:hover {
 	color: white !important;
 	border-color: #D96E7D !important;
-	background: #D96E7D;
+	background: #D96E7D !important;
 	font-family: ABeeZee !important;	
 }
 .btn-outline-PastelPink{
@@ -145,7 +160,7 @@ a.logoApp {
 .btn-outline-PastelPink:hover {
 	color: white !important;
 	border-color: #F7A9A8 !important;
-	background: #F7A9A8;
+	background: #F7A9A8 !important;
 	font-family: ABeeZee !important;	
 }
 .btn-outline-Dark-Cornflower-bleu{
@@ -157,7 +172,21 @@ a.logoApp {
 .btn-outline-Dark-Cornflower-bleu:hover {
 	color: white !important;
 	border-color: #1B3B6F !important;
-	background: #1B3B6F;
+	background: #1B3B6F !important;
+	font-family: ABeeZee !important;	
+}
+
+
+.btn-outline-frensh-violet{
+	color: #7B2CBF !important;
+	border-color: #7B2CBF !important;
+	font-family: ABeeZee !important;
+}
+
+.btn-outline-frensh-violet:hover {
+	color: white !important;
+	border-color: #7B2CBF !important;
+	background: #7B2CBF !important;
 	font-family: ABeeZee !important;	
 }
 
@@ -187,15 +216,47 @@ a.logoApp {
 	padding-left: 200px !important;
 	padding-right: 200px !important;
 }
-/* 
+
 body{
-	background-image: url('../img/background.svg');
+	background-image: url('../img/back.svg');
 	background-repeat: no-repeat;
-} */
+}
 
 .round-pill-start{
 	border-radius: 70px 0px 0px 70px !important;
 }
+
 .round-pill-end{
 	border-radius: 0px 70px 70px 0px !important;
+}
+
+.round-0{
+	border-radius: 0% !important;
+}
+
+
+a.deconnecter:hover {
+	color: white !important;
+	border-color: #1B3B6F !important;
+	background: #1B3B6F;
+	font-family: ABeeZee !important;
+	border-radius: 70px 70px 70px 70px !important;
+	padding: 6px !important;
+	margin-left: 15px !important;
+}
+a.login-btn{
+	font-family: ABeeZee !important;
+}
+a.login-btn:hover {
+	color: white !important;
+	border-color: #1B3B6F !important;
+	background: #1B3B6F;
+	
+	border-radius: 70px 70px 70px 70px !important;
+	padding: 6px 30px 6px 30px !important;
+	margin-left: 15px !important;
+}
+
+.font-abezee{
+	font-family: ABeeZee !important;
 }

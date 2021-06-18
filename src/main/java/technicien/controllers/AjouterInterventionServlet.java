@@ -59,6 +59,11 @@ public class AjouterInterventionServlet extends HttpServlet {
 			if( m != null) {
 				int Id_mat = m.getId_mat();
 				String Traitement = request.getParameter("Traitement");
+				if(Traitement.equals("...") == false) {
+					m.setEtat_mat("remise_neuf");
+					m_dao.ModifMateriel(m);
+				}
+					
 				Date Date_intervention = new Date();
 				
 				Intervention i = new Intervention();

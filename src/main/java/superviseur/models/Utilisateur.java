@@ -17,6 +17,7 @@ public class Utilisateur{
 	private String Motpass;
 	private String motpassConfirmation;
 	private String type_user;
+	private String photo;
 	private String created_at;
 	private String updated_at;
 	
@@ -122,6 +123,12 @@ public class Utilisateur{
 				+ getPrenom_user() + ", getTele()=" + getTele() + ", getEmail()=" + getEmail() + ", getLogin()="
 				+ getLogin() + ", getMotpass()=" + getMotpass() + ", getType_user()=" + getType_user()
 				+ ", getCreated_at()=" + getCreated_at() + "]";
+	}
+	public String getPhoto() {
+		return photo;
+	}
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 	
 	

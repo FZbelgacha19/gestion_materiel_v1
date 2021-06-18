@@ -11,24 +11,24 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Listes des demandes</h2>
+		Listes des demandes
 	</r:override>
 
 	<r:override name="content">
-		<div class="d-flex justify-content-end m-5" id="search">
+		<div class="container d-flex justify-content-end mx-5 mt-2 mb-3 pe-5" id="search">
 			<form action="<%=request.getContextPath()%>/List_Demande"
-				method="post" class="d-flex justify-content-around">
-				<select  class="form-select" name="value">
+				method="post" class="d-flex justify-content-around rounded-pill">
+				<select  class="form-select round-pill-start" name="value">
 					<option value="" disabled="disabled" selected="selected"></option>
 					<option value="no_valide">Demande no valide</option>
 					<option value="valide">Demande valide</option>
 				</select>
-				<div class="btn-group ms-2">
-				<button class="btn btn-outline-success btn-sm" type="submit"><i class="bi bi-search"></i></button>
-				<button class="btn btn-outline-danger btn-sm" type="button" onclick="location.href='List_Demande'">
+
+				<button class="btn btn-outline-Dark-Cornflower-bleu btn-sm round-0" type="submit"><i class="bi bi-search"></i></button>
+				<button class="btn btn-outline-CandyPink btn-sm round-pill-end" type="button" onclick="location.href='List_Demande'">
 				<b>X</b>
 				</button>
-				</div>
+
 			</form>
 		</div>
 		<div class="scrollbar">
@@ -58,10 +58,10 @@
 								<td>${d.getValide()}</td>
 								<c:if test="${ fn:contains(d.getValide(),'no_valide') }">
 									<td id="BtnEditing"><a
-										class="btn btn-outline-primary m-2 btn-sm"
+										class="btn btn-outline-Dark-Cornflower-bleu m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Modif_Demander?id_dmd=${d.getId_dmd()}"><i
 											class="bi bi-pencil-square"></i></a> <a
-										class="btn btn-outline-danger m-2 btn-sm"
+										class="btn btn-outline-CandyPink m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Delete_Demander?id_dmd=${d.getId_dmd()}"><i
 											class="bi bi-x-square"></i></a></td>
 								</c:if>

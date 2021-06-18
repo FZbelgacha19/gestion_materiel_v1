@@ -11,7 +11,7 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Liste des Salles</h2>
+		Liste des Salles
 	</r:override>
 
 	<r:override name="content">
@@ -32,10 +32,10 @@
 								<td>${s.getNum_salle()}</td>
 								
 									<td id="BtnEditing"><a
-										class="btn btn-outline-primary m-2 btn-sm"
+										class="btn btn-outline-Dark-Cornflower-bleu m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Modifier_Salle?id_s=${s.getId_salle()}"><i
 											class="bi bi-pencil-square"></i></a> <a
-										class="btn btn-outline-danger m-2 btn-sm"
+										class="btn btn-outline-CandyPink m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Delete_Salle?id_s=${s.getId_salle()}"><i
 											class="bi bi-x-square"></i></a></td>
 								

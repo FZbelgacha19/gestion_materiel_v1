@@ -11,7 +11,7 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Liste des filieres</h2>
+		Liste des filieres
 	</r:override>
 
 	<r:override name="content">
@@ -32,10 +32,10 @@
 								<td>${f.getNbr_etudiant()}</td>
 								
 									<td id="BtnEditing"><a
-										class="btn btn-outline-primary m-2 btn-sm"
+										class="btn btn-outline-Dark-Cornflower-bleu m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Modifier_Filiere?id_f=${f.getId_fil()}"><i
 											class="bi bi-pencil-square"></i></a> <a
-										class="btn btn-outline-danger m-2 btn-sm"
+										class="btn btn-outline-CandyPink m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Delete_Filiere?id_f=${f.getId_fil()}"><i
 											class="bi bi-x-square"></i></a></td>
 								

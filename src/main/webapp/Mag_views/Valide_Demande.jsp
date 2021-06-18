@@ -11,15 +11,15 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Valider demandes</h2>
+		Valider demandes
 	</r:override>
 
 	<r:override name="content">
-		<div class="d-flex justify-content-end m-5" id="search">
+		<div class="container d-flex justify-content-end mx-5 mt-2 mb-3 pe-5" id="search">
 			<form action="<%=request.getContextPath()%>/Valide_Demande"
 				method="post" class="d-flex justify-content-around">
-				<input name="value" type="search" class="form-control col">
-				<button class="btn btn-outline-success" type="submit">Search</button>
+				<input name="value" type="search" class="form-control round-pill-start">
+				<button class="btn btn-outline-Dark-Cornflower-bleu round-pill-end" type="submit">Search</button>
 			</form>
 		</div>
 		<div class="scrollbar">
@@ -49,7 +49,7 @@
 								<td>${d.getValide()}</td>
 								<c:if test="${ fn:contains(d.getValide(),'no_valide') }">
 									<td id="BtnEditing"><a
-										class="btn btn-outline-primary m-2 btn-sm"
+										class="btn btn-outline-Dark-Cornflower-bleu m-2 btn-sm"
 										href="<%=request.getContextPath()%>/Valider?id_d=${d.getId_dmd()}"><i
 											class="bi bi-check2-square"></i></a>
 								</td>

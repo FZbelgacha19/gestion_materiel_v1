@@ -37,39 +37,45 @@
 	<r:override name="content">
 		<div class="container px-200">
 			<form action="<%=request.getContextPath()%>/Ajouter_utilisateur"
-				method="post">
+				method="post" enctype="multipart/form-data">
 				<div class="row align-items-start">
 					<div class="col mb-3">
 						<label class="form-label">Nom : </label> <input type="text"
-							class="form-control" name="nom">
+							class="form-control" name="nom" required="required">
 					</div>
 					<div class="col mb-3">
 						<label class="form-label">Prenom : </label> <input type="text"
-							class="form-control" name="prenom">
+							class="form-control" name="prenom" required="required">
 					</div>
 				</div>
-				<div class="mb-3">
+				<div class="row align-items-start">
+				<div class="col mb-3">
 					<label class="form-label">Telephone : </label> <input type="text"
-						class="form-control" name="tele">
+						class="form-control" name="tele" required="required">
+				</div>
+					<div class="col mb-3">
+					<label class="form-label">photo identité : </label> <input type="file"
+						class="form-control" name="photo">
+				</div>
 				</div>
 				<div class="row align-items-start">
 					<div class="col mb-3">
 						<label class="form-label">Email : </label> <input type="email"
-							class="form-control" name="email">
+							class="form-control" name="email" required="required">
 					</div>
 					<div class="col mb-3">
 						<label class="form-label">Mot de pass : </label> <input
-							type="password" class="form-control" name="motPass">
+							type="password" class="form-control" name="motPass" required="required">
 					</div>
 				</div>
 				<div class="row align-items-start">
 					<div class="col mb-3">
 						<label class="form-label">Login : </label> <input type="text"
-							class="form-control" name="login">
+							class="form-control" name="login" required="required">
 					</div>
 					<div class="col mb-3">
 						<label class="form-label">type utilisateur : </label> <select
-							class="form-select" name="type_user">
+							class="form-select" name="type_user" required="required">
 							<option selected disabled="disabled">Choisi type</option>
 							<option value="Magasinier">Magasinier</option>
 							<option value="Professeur">Professeur</option>

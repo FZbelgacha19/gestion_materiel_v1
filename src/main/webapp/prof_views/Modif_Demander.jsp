@@ -13,10 +13,11 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Modifier Demande</h2>
+		Modifier Demande
 	</r:override>
 
 	<r:override name="content">
+	<div class="container px-200">
 	<c:if test="${d.getValide() == 'valide'}">
 				<%
 				response.sendRedirect(request.getContextPath() + "/List_Demande");
@@ -27,14 +28,14 @@
 			method="post">
   			<c:set var="now" value="<%=new java.util.Date()%>" />
 			<div class="mb-3 row">
-				<label for="Date_dmd" class="form-label col-2">Date Demande</label>
+				<label for="Date_dmd" class="form-label col-3">Date Demande</label>
 				<input id="Date_dmd" name="Date_dmd" type="date"
 					class="form-control col" value="${d.getDate_dmd()}"
 					disabled="disabled">
 			</div>
 			<div class="mb-3 row">
-				<label for="Designation" class="form-label col-2">Designation</label>
-				<select id="Designation" name="Designation" class="form-control col"
+				<label for="Designation" class="form-label col-3">Designation</label>
+				<select id="Designation" name="Designation" class="form-select col"
 					required="required">
 					<option value=""></option>
 					<c:forEach items="${listtype}" var="l">
@@ -43,36 +44,37 @@
 				</select>
 			</div>
 			<div class="mb-3 row">
-				<label for="Salle" class="form-label col-2">Salles</label> <select
-					id="Salle" name="Salle" class="form-control col"
+				<label for="Salle" class="form-label col-3">Salles</label> <select
+					id="Salle" name="Salle" class="form-select col"
 					required="required">
 					<option value=""></option>
 					<c:forEach items="${Salles}" var="s">
 						<option value="${s.getId_salle()}" ${s.getId_salle() ==d.getSalle()? 'selected':''}>${s.getNum_salle()}</option>
 					</c:forEach>
-				</select> <small><a href="nouvel_salle" target="_blank">Ajouter nouvel Salle</a></small>
+				</select> <small><a href="nouvel_salle" target="_blank" class="col-Candy-Pink">Ajouter nouvel Salle</a></small>
 			</div>
 
 			<div class="mb-3 row">
-				<label for="filiere" class="form-label col-2">Filier</label> <select
-					id="filiere" name="filiere" class="form-control col"
+				<label for="filiere" class="form-label col-3">Filier</label> <select
+					id="filiere" name="filiere" class="form-select col"
 					required="required">
 					<option value=""></option>
 					<c:forEach items="${filiere}" var="f">
 						<option value="${f.getId_fil()}" ${f.getId_fil() ==d.getFiliere()? 'selected':''}>${f.getNom_fil()}</option>
 					</c:forEach>
-				</select> <small><a href="nouvel_filier" target="_blank">Ajouter nouvel filiere</a></small>
+				</select> <small><a href="nouvel_filier" target="_blank" class="col-Candy-Pink">Ajouter nouvel filiere</a></small>
 			</div>
 			<div class="mb-3 row">
-				<label for="Qte" class="form-label col-2">Quantite</label> <input
+				<label for="Qte" class="form-label col-3">Quantite</label> <input
 					id="Qte" name="Qte" type="number" class="form-control col"
 					required="required" value="${d.getQte()}">
 			</div>
 
 			<div class="mb-3 d-flex justify-content-end">
-				<button name="submit" type="submit" class="btn btn-outline-primary">Confirmer</button>
+				<button name="submit" type="submit" class="btn btn-outline-Dark-Cornflower-bleu rounded-pill">Confirmer</button>
 			</div>
 		</form>
+		</div>
 	</r:override>
 
 

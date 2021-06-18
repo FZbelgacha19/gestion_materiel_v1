@@ -11,7 +11,12 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Ajouter nouveau intervention</h2>
+		<div>
+			<h2 class="font-bold col-Russian-violet">Ajouter nouveau
+				intervention</h2>
+
+			<hr>
+		</div>
 	</r:override>
 	<r:override name="message">
 		<c:choose>
@@ -28,8 +33,10 @@
 		</c:choose>
 	</r:override>
 	<r:override name="content">
+	<div class="container px-200 m-2">
 		<form class="mx-5"
-			action="<%=request.getContextPath()%>/Ajouter_Intervention" method="post">
+			action="<%=request.getContextPath()%>/Ajouter_Intervention"
+			method="post">
 
 			<div class="mb-3 row">
 				<label for="Num_Serie" class="form-label col-2">N° serie</label> <input
@@ -39,13 +46,14 @@
 			</div>
 			<div class="mb-3 row">
 				<label for="Traitement" class="form-label col-2">Traitement</label>
-				<textarea id="Traitement" name="Traitement"
-					class="form-control col" rows="3">...</textarea>
+				<textarea id="Traitement" name="Traitement" class="form-control col"
+					rows="3">...</textarea>
 			</div>
 			<div class="mb-3 d-flex justify-content-end">
-				<button name="submit" type="submit" class="btn btn-outline-primary">ajouter</button>
+				<button name="submit" type="submit" class="btn btn-outline-Dark-Cornflower-bleu rounded-pill m-1">ajouter</button>
 			</div>
 		</form>
+		</div>
 	</r:override>
 
 

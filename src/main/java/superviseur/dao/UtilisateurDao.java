@@ -15,8 +15,9 @@ public class UtilisateurDao {
 
 	public int AjouterUtilisateur(Utilisateur ut) throws Exception {
 		String query = "INSERT INTO `utilisateur`"
-				+ "(`id_user`, `Nom_user`, `Prenom_user`, `tele`, `email`, `login`, `Motpass`,`motpassConfirmation`, `type_user`,`created_at`,`updated_at`)"
-				+ "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+				+ "(`id_user`, `Nom_user`, `Prenom_user`, `tele`, `email`, `login`, `Motpass`,"
+				+ "`motpassConfirmation`, `type_user`,`created_at`,`updated_at`,`photo`)"
+				+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 		int result = 0;
 		Connection conn = connection.getConnection();
 		try {
@@ -33,6 +34,7 @@ public class UtilisateurDao {
 			ps.setString(9, ut.getType_user());
 			ps.setString(10, ut.getCreated_at());
 			ps.setString(11, ut.getUpdated_at());
+			ps.setString(12, ut.getPhoto());
 
 			result = ps.executeUpdate();
 			ps.close();
@@ -67,6 +69,7 @@ public class UtilisateurDao {
 					u.setMotpassConfirmation(rs.getString("motpassConfirmation"));
 					u.setCreated_at(rs.getString("created_at"));
 					u.setUpdated_at(rs.getString("updated_at"));
+					u.setPhoto(rs.getString("photo"));
 					users.add(u);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -103,6 +106,7 @@ public class UtilisateurDao {
 					u.setMotpassConfirmation(rs.getString("motpassConfirmation"));
 					u.setCreated_at(rs.getString("created_at"));
 					u.setUpdated_at(rs.getString("updated_at"));
+					u.setPhoto(rs.getString("photo"));
 					users.add(u);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -141,6 +145,7 @@ public class UtilisateurDao {
 					user.setMotpassConfirmation(rs.getString("motpassConfirmation"));
 					user.setCreated_at(rs.getString("created_at"));
 					user.setUpdated_at(rs.getString("updated_at"));
+					user.setPhoto(rs.getString("photo"));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -160,7 +165,7 @@ public class UtilisateurDao {
 		String query = "UPDATE `utilisateur` SET "
 				+ "`Nom_user`=?,`Prenom_user`=?,`tele`=?,"
 				+ "`email`=?,`login`=?,`Motpass`=?,`motpassConfirmation`=?,"
-				+ "`type_user`=?,`updated_at`=? WHERE id_user=?";
+				+ "`type_user`=?,`updated_at`=?, `photo`=? WHERE id_user=?";
 		
 		Connection conn = connection.getConnection();
 		try {
@@ -176,7 +181,8 @@ public class UtilisateurDao {
 			ps.setString(7, ut.getMotpass());
 			ps.setString(8, ut.getType_user());
 			ps.setString(9, ut.getUpdated_at());
-			ps.setString(10, ut.getId_user());
+			ps.setString(10, ut.getPhoto());
+			ps.setString(11, ut.getId_user());
 
 			ps.executeUpdate();
 			ps.close();
@@ -245,6 +251,7 @@ public class UtilisateurDao {
 					u.setMotpassConfirmation(rs.getString("motpassConfirmation"));
 					u.setCreated_at(rs.getString("created_at"));
 					u.setUpdated_at(rs.getString("updated_at"));
+					u.setPhoto(rs.getString("photo"));
 					users.add(u);
 				} catch (Exception e) {
 					e.printStackTrace();

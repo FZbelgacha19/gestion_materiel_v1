@@ -40,6 +40,7 @@ public Utilisateur login_valide(String email, String motPass) throws Exception{
 				user.setMotpassConfirmation(rs.getString("motpassConfirmation"));
 				user.setCreated_at(rs.getString("created_at"));
 				user.setUpdated_at(rs.getString("updated_at"));
+				user.setPhoto(rs.getString("photo"));
 			}
 			if(EstConnectee(user.getId_user()).getId_user() == null) {
 				ps = conn.prepareStatement(query2);

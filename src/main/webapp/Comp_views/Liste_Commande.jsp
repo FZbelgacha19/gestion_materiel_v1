@@ -11,16 +11,16 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Liste des commande</h2>
+		Liste des commande
 	</r:override>
 
 	<r:override name="content">
-	<div class="d-flex justify-content-end m-5"  id="search">
+	<div class="container d-flex justify-content-end mx-5 mt-2 mb-3 pe-5" id="search">
 			<form action="<%=request.getContextPath()%>/Liste_Commande"
 				method="post" class="d-flex justify-content-around" >
-				<input class="form-control me-2" type="search" placeholder="N° commande"
+				<input class="form-control round-pill-start" type="search" placeholder="N° commande"
 					name="value">
-				<button class="btn btn-outline-success" type="submit">Search</button>
+				<button class="btn btn-outline-Dark-Cornflower-bleu round-pill-end" type="submit">Search</button>
 			</form>
 		</div>
 		<c:if test="${!empty listNumCmd }">
@@ -33,8 +33,8 @@
 							<button class="accordion-button collapsed" type="button"
 								data-bs-toggle="collapse"
 								data-bs-target="#flush-collapse${numC}" aria-expanded="false"
-								aria-controls="flush-collapse${numC}">Commande N° :
-								${numC}</button>
+								aria-controls="flush-collapse${numC}"><p class="font-abezee">Commande N° :
+								${numC}</p></button>
 						</h2>
 						
 
@@ -50,7 +50,7 @@
 							<a class="btn btn-outline-secondary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Imprimer"
 								href="<%=request.getContextPath()%>/Imprimer_Commande?num_c=${numC}"><i
 								class="bi bi-printer"></i></a> <a
-								class="btn btn-outline-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Valider"
+								class="btn btn-outline-Dark-Cornflower-bleu btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Valider"
 								href="<%=request.getContextPath()%>/Valide_Commande?num_cmd=${numC}"><i
 								class="bi bi-check2-square"></i></a> <a
 								class="btn btn-outline-dark btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Payé"
@@ -81,10 +81,10 @@
 													<c:if
 														test="${c.getValider() == 'no_valide' && c.getEtat_cmd() == 'no_paye'}">
 														<td id="BtnEditing"><a
-															class="btn btn-outline-primary m-2 btn-sm"
+															class="btn btn-outline-Dark-Cornflower-bleu m-2 btn-sm"
 															href="<%=request.getContextPath()%>/Modifier_Commande?id_c=${c.getId_cmd()}"><i
 																class="bi bi-pencil-square"></i></a> <a
-															class="btn btn-outline-danger m-2 btn-sm"
+															class="btn btn-outline-CandyPink m-2 btn-sm"
 															href="<%=request.getContextPath()%>/Supp_Commande?id_c=${c.getId_cmd()}"><i
 																class="bi bi-x-square"></i></a></td>
 													</c:if>

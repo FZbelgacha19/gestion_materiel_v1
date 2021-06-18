@@ -49,7 +49,7 @@
 				<ul>
 					<r:block name="navbar">
 						<c:if test="${ sessionScope.Utilisateur == null}">
-							<li><a class="nav-link scrollto" href="Se_connecter">Login</a></li>
+							<li><a class="nav-link scrollto login-btn" href="Se_connecter">Login</a></li>
 						</c:if>
 
 					</r:block>

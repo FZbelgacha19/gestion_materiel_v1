@@ -12,7 +12,10 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Modifier intervention</h2>
+		<div>
+			<h2 class="font-bold col-Russian-violet">Modifier intervention</h2>
+			<hr>
+		</div>
 	</r:override>
 	<r:override name="message">
 		<c:choose>
@@ -29,6 +32,7 @@
 		</c:choose>
 	</r:override>
 	<r:override name="content">
+	<div class="container px-200">
 		<form class="mx-5"
 			action="<%=request.getContextPath()%>/Modifier_Intervention?id_i=${i.getId_intervention()}"
 			method="post">
@@ -51,9 +55,10 @@
 					rows="3">${i.getTraitement()}</textarea>
 			</div>
 			<div class="mb-3 d-flex justify-content-end">
-				<button name="submit" type="submit" class="btn btn-outline-primary">Modifier</button>
+				<button name="submit" type="submit" class="btn btn-outline-Dark-Cornflower-bleu rounded-pill m-1">Modifier</button>
 			</div>
 		</form>
+		</div>
 	</r:override>
 
 

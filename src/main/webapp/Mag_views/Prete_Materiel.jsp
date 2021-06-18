@@ -18,15 +18,15 @@
 </head>
 <body>
 	<r:override name="pageTitle">
-		<h2>Prete materiel</h2>
+		Prete materiel
 	</r:override>
 	<r:override name="content">
-		<div class="d-flex justify-content-end m-5" id="search">
+		<div class="container d-flex justify-content-end mx-5 mt-2 mb-5 pe-5" id="search">
 			<form action="<%=request.getContextPath()%>/Prete_Materiel"
 				method="post" class="d-flex justify-content-around">
-				<input class="form-control me-2" type="search" placeholder="Search"
+				<input class="form-control round-pill-start" type="search" placeholder="Search"
 					name="value">
-				<button class="btn btn-outline-success" type="submit">Search</button>
+				<button class="btn btn-outline-Dark-Cornflower-bleu round-pill-end" type="submit">Search</button>
 			</form>
 		</div>
 		<div class="scrollbar">
@@ -51,7 +51,7 @@
 								<td>${m.getEtat_mat()}</td>
 								<td>${m.getMark()}</td>
 								<td id="BtnEditing"><a
-									class="btn btn-outline-primary m-2 btn-sm"
+									class="btn btn-outline-Dark-Cornflower-bleu m-2 btn-sm"
 									href="<%=request.getContextPath()%>/Prete?id_m=${m.getId_mat()}">
 									<i class="bi bi-arrow-right-square"></i></a></td>
 
